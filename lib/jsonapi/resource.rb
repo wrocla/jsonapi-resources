@@ -33,7 +33,7 @@ module JSONAPI
     end
 
     def id
-      _model.public_send(self.class._primary_key)
+      _model.public_send(self.class._primary_key) if self.class._primary_key.present?
     end
 
     def cache_id
